@@ -1,0 +1,22 @@
+<div class="form">
+  <div class="form-grid">
+    <div class="form-picture">
+      <app-profile-picture [userImage]="user.image"></app-profile-picture>
+    </div>
+
+    <div class="fields">
+      <custom-input-field label="Your Name" [value]="user.name"></custom-input-field>
+      <custom-input-field label="Email" [value]="user.email" type="email"></custom-input-field>
+      <custom-input-field label="Date of Birth" [value]="user.dob" type="date"></custom-input-field>
+      <custom-input-field label="Permanent Address" [value]="user.permanentAddress"></custom-input-field>
+      <custom-input-field label="Postal Code" [value]="user.postalCode"></custom-input-field>
+      <custom-input-field label="User Name" [value]="user.username"></custom-input-field>
+      <custom-input-field label="Password" [value]="user.password" type="password"></custom-input-field>
+      <custom-input-field label="Present Address" [value]="user.address"></custom-input-field>
+      <custom-input-field label="City" [value]="user.city"></custom-input-field>
+      <custom-input-field label="Country" [value]="user.country"></custom-input-field>
+      <app-custom-button label="Save" buttonClass="primary" class="app-custom-button"></app-custom-button>
+    </div>
+  </div>
+
+</div>

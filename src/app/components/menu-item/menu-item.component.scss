@@ -1,0 +1,33 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.active {
+  color: #1814F3
+}
+
+.active > .tab {
+  position: absolute;
+  height: 60px;
+  width: 6px;
+  left: -44px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #1814F3;
+}
+
+.menu-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 25px;
+}
+
+.menu-title {
+  color: #B1B1B1;
+  font-weight: 500;
+  font-size: 16px;
+}

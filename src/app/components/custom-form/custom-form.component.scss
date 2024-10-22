@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 1110px;
+  .form-grid{
+    width: 100%;
+    display: grid;
+    column-gap: 53px;
+    justify-content: flex-start;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, auto);
+
+    .fields {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      column-gap: 29px;
+      row-gap: 22px;
+
+      .app-custom-button {
+        text-align: end;
+        grid-column: 2;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div class="tabs">
+  <button (click)="selectTab('profile')">Edit Profile</button>
+  <button (click)="selectTab('preferences')">Preferences</button>
+  <button (click)="selectTab('security')">Security</button>
+</div>
+
+<div class="tab-content">
+  <ng-content></ng-content>
+</div>

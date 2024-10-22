@@ -1,0 +1,31 @@
+<div class="menu-item"  [ngClass]="{'active':item.active}">
+  <div class="tab"></div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-home'">
+    <app-home [active]="item.active"></app-home>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-transactions'">
+    <app-transactions [active]="item.active"></app-transactions>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-accounts'">
+    <app-accounts [active]="item.active"></app-accounts>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-investments'">
+    <app-investments [active]="item.active"></app-investments>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-credit-cards'">
+    <app-credit-cards [active]="item.active"></app-credit-cards>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-loan'">
+    <app-loan [active]="item.active"></app-loan>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-service'">
+    <app-service [active]="item.active"></app-service>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-privileges'">
+    <app-privileges [active]="item.active"></app-privileges>
+  </div>
+  <div class="menu-icon" *ngIf="item.componentName === 'app-settings'">
+    <app-settings [active]="item.active"></app-settings>
+  </div>
+  <span class="menu-title">{{ item.title }}</span>
+</div>

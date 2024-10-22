@@ -1,6 +1,15 @@
 .header_container {
   width: 100%;
-   display: flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  align-items: center;
   height: 100px;
   background-color: #fff;
+
+  h1 {
+    color: #343C6A;
+    font-weight: 600;
+    font-size: 28px;
+  }
 }
