@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgClass, NgIf} from '@angular/common';
 import {AccountsComponent} from '../svg/accounts/accounts.component';
 import {MenuItem} from '../../interfaces/menu-item';
@@ -30,7 +30,7 @@ import {SettingsComponent} from '../svg/settings/settings.component';
   templateUrl: './menu-item.component.html',
   styleUrl: './menu-item.component.scss'
 })
-export class MenuItemComponent {
+export class MenuItemComponent implements OnInit {
 
   @Input() item: MenuItem = {
     componentName: '',
@@ -39,4 +39,17 @@ export class MenuItemComponent {
     active: false
   };
   @Input() componentName: string = '';
+
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+    this.navigate(this.item.title);
+  }
+
+  public navigate(location: string) {
+    console.log(location);
+  }
 }
