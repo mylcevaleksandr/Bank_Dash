@@ -15,14 +15,20 @@ import {MenuItem} from '../../interfaces/menu-item';
 })
 export class LeftMenuComponent {
   items: MenuItem[] = [
-    {componentName: 'app-home', src: 'home.svg', title: 'Dashboard'},
-    {componentName: 'app-transactions', src: 'transactions.svg', title: 'Transactions'},
-    {componentName: 'app-accounts', src: 'accounts.svg', title: 'Accounts'},
-    {componentName: 'app-investments', src: 'investments.svg', title: 'Investments'},
-    {componentName: 'app-credit-cards', src: 'credit_cards.svg', title: 'Credit Cards', active: true},
-    {componentName: 'app-loan', src: 'loan.svg', title: 'Loans'},
-    {componentName: 'app-service', src: 'service.svg', title: 'Services'},
-    {componentName: 'app-privileges', src: 'privileges.svg', title: 'my Privileges'},
-    {componentName: 'app-settings', src: 'settings.svg', title: 'Setting', active: true}
+    {componentName: 'app-home', src: 'home.svg', title: 'Dashboard', route: 'dashboard'},
+    {componentName: 'app-transactions', src: 'transactions.svg', title: 'Transactions', route: 'transactions'},
+    {componentName: 'app-accounts', src: 'accounts.svg', title: 'Accounts', route: 'accounts'},
+    {componentName: 'app-investments', src: 'investments.svg', title: 'Investments', route: 'investments'},
+    {
+      componentName: 'app-credit-cards',
+      src: 'credit_cards.svg',
+      title: 'Credit Cards',
+      route: 'creditcards',
+      active: true
+    },
+    {componentName: 'app-loan', src: 'loan.svg', title: 'Loans', route: 'loans'},
+    {componentName: 'app-service', src: 'service.svg', title: 'Services', route: 'services'},
+    {componentName: 'app-privileges', src: 'privileges.svg', title: 'My Privileges', route: 'privileges'},
+    {componentName: 'app-settings', src: 'settings.svg', title: 'Setting', route: 'settings', active: true}
   ];
 }

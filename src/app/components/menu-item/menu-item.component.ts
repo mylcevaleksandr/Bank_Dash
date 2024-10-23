@@ -36,6 +36,7 @@ export class MenuItemComponent implements OnInit {
     componentName: '',
     src: '',
     title: '',
+    route:'',
     active: false
   };
   @Input() componentName: string = '';
@@ -46,7 +47,7 @@ export class MenuItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navigate(this.item.title);
+    this.navigate(this.item.route);
   }
 
   public navigate(location: string) {
