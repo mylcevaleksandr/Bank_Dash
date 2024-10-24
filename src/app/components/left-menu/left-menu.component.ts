@@ -29,6 +29,6 @@ export class LeftMenuComponent {
     {componentName: 'app-loan', src: 'loan.svg', title: 'Loans', route: 'loans'},
     {componentName: 'app-service', src: 'service.svg', title: 'Services', route: 'services'},
     {componentName: 'app-privileges', src: 'privileges.svg', title: 'My Privileges', route: 'privileges'},
-    {componentName: 'app-settings', src: 'settings.svg', title: 'Setting', route: 'settings', active: true}
+    {componentName: 'app-settings', src: 'settings.svg', title: 'Setting', route: 'setting', active: true}
   ];
 }

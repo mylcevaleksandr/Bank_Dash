@@ -1,4 +1,11 @@
 <div class="header_container">
   <h1>{{header}}</h1>
-  <app-search />
+  <div class="navigation_elements">
+    <app-search/>
+    <app-header-icon-button iconSrc="settings_header.svg" altText="Settings"></app-header-icon-button>
+    <app-header-icon-button iconSrc="notification.svg" altText="Notifications"></app-header-icon-button>
+    <div class="user_icon">
+      <app-profile-picture [userImage]="user.image"></app-profile-picture>
+    </div>
+  </div>
 </div>

@@ -10,6 +10,7 @@ import {LoanComponent} from '../svg/loan/loan.component';
 import {ServiceComponent} from '../svg/service/service.component';
 import {PrivilegesComponent} from '../svg/privileges/privileges.component';
 import {SettingsComponent} from '../svg/settings/settings.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu-item',
@@ -42,7 +43,7 @@ export class MenuItemComponent implements OnInit {
   @Input() componentName: string = '';
 
 
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
@@ -51,6 +52,6 @@ export class MenuItemComponent implements OnInit {
   }
 
   public navigate(location: string) {
-    console.log(location);
+    this.router.navigate([location])
   }
 }

@@ -1,4 +1,4 @@
-<div class="menu-item"  [ngClass]="{'active':item.active}">
+<div class="menu-item"  [ngClass]="{'active':item.active}" (click)="navigate(item.route)">
   <div class="tab"></div>
   <div class="menu-icon" *ngIf="item.componentName === 'app-home'">
     <app-home [active]="item.active"></app-home>
