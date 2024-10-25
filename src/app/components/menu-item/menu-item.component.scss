@@ -6,11 +6,8 @@
   position: relative;
 }
 
-.active {
-  color: #1814F3
-}
 
-.active > .tab {
+.active > .active__menu--item {
   position: absolute;
   height: 60px;
   width: 6px;
@@ -29,5 +26,9 @@
 .menu-title {
   color: #B1B1B1;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.active {
+  color: #1814F3
 }

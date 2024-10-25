@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ProfilePictureComponent} from '../profile-picture/profile-picture.component';
 import {InputFieldComponent} from '../input-field/input-field.component';
 import {CustomButtonComponent} from '../custom-button/custom-button.component';
@@ -19,12 +19,12 @@ export class CustomFormComponent {
   user = {
     image: 'profile_picture.png',
     name: 'Charlene Reed',
-    username: 'charlenereed',
+    username: 'Charlene Reed ',
     email: 'charlenereed@gmail.com',
+    password: '**********',
     dob: '1990-01-25',
     permanentAddress: 'San Jose, California, USA',
     address: 'San Jose, California, USA',
-    password: 'TestPassword',
     city: 'San Jose',
     postalCode: '45962',
     country: 'USA'

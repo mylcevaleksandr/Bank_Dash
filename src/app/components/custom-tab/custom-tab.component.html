@@ -1,9 +1,20 @@
-<div class="tabs">
-  <button (click)="selectTab('profile')">Edit Profile</button>
-  <button (click)="selectTab('preferences')">Preferences</button>
-  <button (click)="selectTab('security')">Security</button>
-</div>
+<app-workspace>
+  <div class="tabs">
+    <button class="button__wrapper" routerLink="profile" routerLinkActive="active-tab">
+      Edit Profile
+      <span class="active__button"></span></button>
+    <button class="button__wrapper" routerLink="preferences"
+            routerLinkActive="active-tab">Preferences
+      <span class="active__button"></span>
+    </button>
 
-<div class="tab-content">
-  <ng-content></ng-content>
-</div>
+    <button class="button__wrapper" routerLink="security" routerLinkActive="active-tab">
+      Security
+      <span class="active__button"></span>
+    </button>
+  </div>
+
+  <div class="tab-content">
+    <router-outlet/>
+  </div>
+</app-workspace>

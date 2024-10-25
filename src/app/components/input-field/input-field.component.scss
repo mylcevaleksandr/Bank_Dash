@@ -3,23 +3,43 @@
   flex-direction: column;
   gap: 11px;
 
-  label {
-    margin-bottom: 5px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #232323;
+  .input-wrapper {
+    position: relative;
+
+    label {
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #232323;
+    }
+
+    input {
+      height: 50px;
+      width: 418px;
+      border: 1px solid #DFEAF2;
+      border-radius: 15px;
+      font-size: 15px;
+      font-weight: 400;
+      padding: 20px 16px;
+      color: #718EBF;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    svg {
+      width: 14px;
+      height: 9px;
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
-  input {
-    height: 50px;
-    width: 418px;
-    border: 1px solid #DFEAF2;
-    border-radius: 15px;
-    font-size: 15px;
-    font-weight: 400;
-    padding: 20px 16px;
-    color: #718EBF;
-  }
 }
 
 

@@ -1,16 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
-h1 {
-  color: orange;
-}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body  {
+
+body {
   height: 100vh;
   width: 100vw;
   background-color: #F5F7FA;
-  font-family: Inter,sans-serif;
+  font-family: Inter, sans-serif;
+}
 
+input {
+  outline: none;
+
+  &::placeholder {
+    color: #8BA3CB;
+  }
+}
+
+h1 {
+  color: #343C6A;
+  font-weight: 600;
+  font-size: 28px;
 }

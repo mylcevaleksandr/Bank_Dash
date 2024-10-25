@@ -1,5 +1,5 @@
-<div class="menu-item"  [ngClass]="{'active':item.active}" (click)="navigate(item.route)">
-  <div class="tab"></div>
+<div class="menu-item" [routerLink]="item.route" routerLinkActive="active">
+  <div class="active__menu--item"></div>
   <div class="menu-icon" *ngIf="item.componentName === 'app-home'">
     <app-home [active]="item.active"></app-home>
   </div>
@@ -27,5 +27,5 @@
   <div class="menu-icon" *ngIf="item.componentName === 'app-settings'">
     <app-settings [active]="item.active"></app-settings>
   </div>
-  <span class="menu-title">{{ item.title }}</span>
+  <span class="menu-title" [ngClass]="{'active':item.active}">{{ item.title }}</span>
 </div>

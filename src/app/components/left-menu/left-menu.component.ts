@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {MenuItemComponent} from '../menu-item/menu-item.component';
 import {MenuItem} from '../../interfaces/menu-item';
+import {NavigationEnd, Router} from '@angular/router';
+import {filter} from 'rxjs';
 
 @Component({
   selector: 'app-left-menu',
@@ -23,12 +25,22 @@ export class LeftMenuComponent {
       componentName: 'app-credit-cards',
       src: 'credit_cards.svg',
       title: 'Credit Cards',
-      route: 'creditcards',
-      active: true
+      route: 'creditcards'
     },
     {componentName: 'app-loan', src: 'loan.svg', title: 'Loans', route: 'loans'},
     {componentName: 'app-service', src: 'service.svg', title: 'Services', route: 'services'},
     {componentName: 'app-privileges', src: 'privileges.svg', title: 'My Privileges', route: 'privileges'},
     {componentName: 'app-settings', src: 'settings.svg', title: 'Setting', route: 'setting', active: true}
   ];
+
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      let currentRoute = event.urlAfterRedirects.split('/')[1];
+      this.items.forEach(item => {
+        item.active = item.route === currentRoute;
+      });
+    });
+  }
 }
