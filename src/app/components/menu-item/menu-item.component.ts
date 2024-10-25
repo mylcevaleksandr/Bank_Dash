@@ -51,6 +51,7 @@ export class MenuItemComponent {
 
   public navigate(location: string) {
     this.item.active = false;
+    console.log(location);
     this.router.navigate([location]);
   }
 }

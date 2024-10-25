@@ -1,7 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProfilePictureComponent} from '../profile-picture/profile-picture.component';
 import {InputFieldComponent} from '../input-field/input-field.component';
 import {CustomButtonComponent} from '../custom-button/custom-button.component';
+import {UserService} from '../../services/user.service';
+import {User} from '../../interfaces/user';
 
 
 @Component({
@@ -15,18 +17,15 @@ import {CustomButtonComponent} from '../custom-button/custom-button.component';
   templateUrl: './custom-form.component.html',
   styleUrl: './custom-form.component.scss'
 })
-export class CustomFormComponent {
-  user = {
-    image: 'profile_picture.png',
-    name: 'Charlene Reed',
-    username: 'Charlene Reed ',
-    email: 'charlenereed@gmail.com',
-    password: '**********',
-    dob: '1990-01-25',
-    permanentAddress: 'San Jose, California, USA',
-    address: 'San Jose, California, USA',
-    city: 'San Jose',
-    postalCode: '45962',
-    country: 'USA'
-  };
+export class CustomFormComponent implements OnInit {
+  public user!: User;
+
+  constructor(private userService: UserService) {
+  }
+
+  ngOnInit(): void {
+    this.userService.getUserData().subscribe(user => {
+      this.user = user;
+    });
+  }
 }

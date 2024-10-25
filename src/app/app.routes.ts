@@ -17,11 +17,19 @@ export const routes: Routes = [
         children: [
           {path: 'profile', component: CustomFormComponent},
           {path: 'preferences', component: PreferencesComponent},
-          {path: 'security', component: SecurityComponent}
+          {path: 'security', component: SecurityComponent},
         ]
       },
-      {path: "**", component: PageNotFoundComponent}
+      {path: "dashboard", component: PageNotFoundComponent},
+      {path: "transactions", component: PageNotFoundComponent},
+      {path: "accounts", component: PageNotFoundComponent},
+      {path: "investments", component: PageNotFoundComponent},
+      {path: "creditcards", component: PageNotFoundComponent},
+      {path: "loans", component: PageNotFoundComponent},
+      {path: "services", component: PageNotFoundComponent},
+      {path: "privileges", component: PageNotFoundComponent},
+      {path: "**", redirectTo: '/dashboard', pathMatch: 'full'}
     ]
-  },
+  }
 ];
 

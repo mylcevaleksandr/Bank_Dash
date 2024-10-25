@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {SearchComponent} from '../search/search.component';
-import {NavigationEnd, Router} from '@angular/router';
-import {filter} from 'rxjs';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {HeaderIconButtonComponent} from '../header-icon-button/header-icon-button.component';
 import {ProfilePictureComponent} from '../profile-picture/profile-picture.component';
+import {User} from '../../interfaces/user';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -16,31 +17,23 @@ import {ProfilePictureComponent} from '../profile-picture/profile-picture.compon
 })
 
 export class HeaderComponent implements OnInit {
-  public header: string = 'Settings';
-  user = {
-    image: 'profile_picture.png',
-    name: 'Charlene Reed',
-    username: 'charlenereed',
-    email: 'charlenereed@gmail.com',
-    dob: '1990-01-25',
-    permanentAddress: 'San Jose, California, USA',
-    address: 'San Jose, California, USA',
-    password: 'TestPassword',
-    city: 'San Jose',
-    postalCode: '45962',
-    country: 'USA'
-  };
+  public header: string = 'Setting';
+  public user!: User;
 
-  constructor(private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private userService: UserService) {
   }
 
   ngOnInit(): void {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      let temp_title = event.urlAfterRedirects.split('/')[1];
-      this.header = temp_title.charAt(0).toUpperCase() + temp_title.slice(1)
+    this.userService.getUserData().subscribe(data => {
+      this.user = data;
+    });
+    const path: any = this.activatedRoute.snapshot.firstChild?.routeConfig?.path;
+    this.header = path?.charAt(0).toUpperCase() + path?.substring(1);
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        const path: any = this.activatedRoute.snapshot.firstChild?.routeConfig?.path;
+        this.header = path?.charAt(0).toUpperCase() + path?.substring(1);
+      }
     });
   }
-
 }

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WorkspaceComponent} from '../workspace/workspace.component';
-import {NavigationEnd, Router} from '@angular/router';
-import {filter} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-page-not-found',
@@ -15,16 +14,12 @@ import {filter} from 'rxjs';
 export class PageNotFoundComponent implements OnInit {
   public pageName: string = '';
 
-  constructor(private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute) {
+
   }
 
   ngOnInit(): void {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      let temp_title = event.urlAfterRedirects.split('/')[1];
-      this.pageName = temp_title.charAt(0).toUpperCase() + temp_title.slice(1)
-    });
+    this.pageName = this.activatedRoute.snapshot.url[0].path.charAt(0).toUpperCase() + this.activatedRoute.snapshot.url[0].path.substring(1);
   }
 
 }
