@@ -5,6 +5,7 @@
 
   .input-wrapper {
     position: relative;
+    width: 418px;
 
     label {
       margin-bottom: 5px;
@@ -15,7 +16,7 @@
 
     input {
       height: 50px;
-      width: 418px;
+      width: 100%;
       border: 1px solid #DFEAF2;
       border-radius: 15px;
       font-size: 15px;

@@ -1,12 +1,14 @@
 .search_root {
   position: relative;
+
   img {
     position: absolute;
     top: 50%;
     left: 25px;
     transform: translateY(-50%);
   }
-  input {
+
+  &-input {
     color: #8BA3CB;
     background-color: #F5F7FA;
     width: 255px;
@@ -17,5 +19,39 @@
     font-size: 15px;
     font-weight: 400;
   }
+}
 
+@media screen and (max-width: 572px) {
+  .search_root {
+    img {
+      width: 16px;
+      height: 16px;
+      left: 19px;
+    }
+
+    &-input {
+      font-size: 13px;
+      padding: 12px 10px 12px 45px;
+      height: 40px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .search_root {
+    &-input {
+      width: 325px
+    }
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .search_root {
+   width: 85vw;
+
+    &-input {
+      width: 100%;
+    }
+  }
 }

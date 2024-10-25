@@ -1,16 +1,18 @@
 import {Component} from '@angular/core';
-import {NgForOf} from '@angular/common';
+import {NgClass, NgForOf} from '@angular/common';
 import {MenuItemComponent} from '../menu-item/menu-item.component';
 import {MenuItem} from '../../interfaces/menu-item';
 import {NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs';
+import {DashboardService} from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-left-menu',
   standalone: true,
   imports: [
     NgForOf,
-    MenuItemComponent
+    MenuItemComponent,
+    NgClass
   ],
   templateUrl: './left-menu.component.html',
   styleUrl: './left-menu.component.scss'
@@ -32,8 +34,13 @@ export class LeftMenuComponent {
     {componentName: 'app-privileges', src: 'privileges.svg', title: 'My Privileges', route: 'privileges'},
     {componentName: 'app-settings', src: 'settings.svg', title: 'Setting', route: 'setting', active: true}
   ];
+  public toggleDashboard!: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dashboardService: DashboardService) {
+    this.toggleDashboard = this.dashboardService.getToggleDashboard();
+    this.dashboardService.toggleDashboardSubject.subscribe(value => {
+      this.toggleDashboard = value;
+    });
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
@@ -42,5 +49,9 @@ export class LeftMenuComponent {
         item.active = item.route === currentRoute;
       });
     });
+  }
+
+  public closeDashboard(): void {
+    this.dashboardService.setToggleDashboard(!this.toggleDashboard);
   }
 }

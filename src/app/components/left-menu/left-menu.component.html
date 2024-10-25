@@ -1,5 +1,9 @@
-<div class="menu_container">
-  <div class="menu_logo">
+<div class="left_menu-container" [ngClass]="{'toggle_dashboard':toggleDashboard}">
+  <div class="close_dashboard" (click)="closeDashboard()">
+    <span></span>
+    <span></span>
+  </div>
+  <div class="left_menu-logo">
     <svg width="183" height="36" viewBox="0 0 183 36" fill="none" xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink">
       <rect width="36" height="36" fill="url(#pattern0_20_826)"/>
@@ -16,7 +20,7 @@
     </svg>
 
   </div>
-  <ng-container *ngFor="let item of items">
-    <app-menu-item [item]="item"></app-menu-item>
+  <ng-container *ngFor="let item of items" >
+    <app-menu-item [item]="item" (click)="closeDashboard()"></app-menu-item>
   </ng-container>
 </div>
