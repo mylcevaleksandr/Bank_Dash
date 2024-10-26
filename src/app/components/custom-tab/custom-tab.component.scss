@@ -1,29 +1,27 @@
 .tabs {
   display: flex;
-  gap: 72px;
+  gap: 57px;
   border-bottom: 1px solid #f4f5f7;
-  margin-bottom: 72px;
+  margin-bottom: 52px;
 
-  .button__wrapper {
+  &_tab {
+    flex-shrink: 0;
+    font-family: inherit;
     position: relative;
-    padding: 10px;
+    padding: 0 15px 10px 15px;
     border: none;
     font-weight: 500;
     font-size: 16px;
     color: #718EBF;
     background: none;
     cursor: pointer;
-
-    .active__button {
-      display: none;
-    }
   }
 
 
-  .active-tab {
+  .tab_active {
     color: #1814F3;
 
-    .active__button {
+    .tab_active-span {
       display: block;
       position: absolute;
       background-color: #1814F3;
@@ -36,5 +34,37 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .tabs {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .tabs {
+    gap: 36px;
+  }
+
+  .tab_active {
+    .tab_active-span {
+      height: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 472px) {
+  .tabs {
+    margin-bottom: 25px;
+    gap: 16px;
+
+    &_tab {
+      font-size: 13px;
+      padding: 0 6px 8px 6px;
+    }
+  }
+}
+
+
 
 

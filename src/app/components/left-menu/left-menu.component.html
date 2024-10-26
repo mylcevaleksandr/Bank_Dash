@@ -1,7 +1,10 @@
 <div class="left_menu-container" [ngClass]="{'toggle_dashboard':toggleDashboard}">
-  <div class="close_dashboard" (click)="closeDashboard()">
-    <span></span>
-    <span></span>
+  <div class="navigation_elements">
+    <app-navigation-icon-button class="navigation_element" iconSrc="settings_header.svg" altText="Settings">
+    </app-navigation-icon-button>
+    <app-navigation-icon-button class="navigation_element" iconSrc="notification.svg" altText="Notifications">
+    </app-navigation-icon-button>
+    <app-navigation-icon-button class="navigation_element" iconSrc="close.svg" (click)="closeDashboard()"></app-navigation-icon-button>
   </div>
   <div class="left_menu-logo">
     <svg width="183" height="36" viewBox="0 0 183 36" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +23,9 @@
     </svg>
 
   </div>
-  <ng-container *ngFor="let item of items" >
-    <app-menu-item [item]="item" (click)="closeDashboard()"></app-menu-item>
-  </ng-container>
+  <div class="left_menu-dashboard">
+      <ng-container *ngFor="let item of items">
+        <app-menu-item [item]="item" (click)="closeDashboard()"></app-menu-item>
+      </ng-container>
+  </div>
 </div>

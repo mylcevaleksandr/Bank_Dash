@@ -1,31 +1,31 @@
-<div class="menu-item" [routerLink]="item.route" routerLinkActive="active">
-  <div class="active__menu--item"></div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-home'">
+<div class="menu_item" [routerLink]="item.route" routerLinkActive="active">
+  <div class="menu_item-active"></div>
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-home'">
     <app-home [active]="item.active"></app-home>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-transactions'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-transactions'">
     <app-transactions [active]="item.active"></app-transactions>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-accounts'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-accounts'">
     <app-accounts [active]="item.active"></app-accounts>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-investments'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-investments'">
     <app-investments [active]="item.active"></app-investments>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-credit-cards'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-credit-cards'">
     <app-credit-cards [active]="item.active"></app-credit-cards>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-loan'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-loan'">
     <app-loan [active]="item.active"></app-loan>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-service'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-service'">
     <app-service [active]="item.active"></app-service>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-privileges'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-privileges'">
     <app-privileges [active]="item.active"></app-privileges>
   </div>
-  <div class="menu-icon" *ngIf="item.componentName === 'app-settings'">
+  <div class="menu_item-icon" *ngIf="item.componentName === 'app-settings'">
     <app-settings [active]="item.active"></app-settings>
   </div>
-  <span class="menu-title" [ngClass]="{'active':item.active}">{{ item.title }}</span>
+  <span class="menu_item-title" [ngClass]="{'active':item.active}">{{ item.title }}</span>
 </div>

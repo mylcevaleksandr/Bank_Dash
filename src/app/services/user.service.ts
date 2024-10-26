@@ -9,7 +9,7 @@ export class UserService {
 
   public getUserData(): Observable<User> {
     const user: User = {
-      image: 'profile_picture.png',
+      image: 'profile_picture.webp',
       name: 'Charlene Reed',
       username: 'Charlene Reed ',
       email: 'charlenereed@gmail.com',

@@ -13,6 +13,7 @@
 
   h1 {
     flex-grow: 1;
+    width: 190px;
   }
 
   .navigation_elements {
@@ -27,31 +28,59 @@
   }
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1071px) {
   .header_container {
-    flex-wrap: wrap;
+    column-gap: 20px;
 
-    .navigation_element:not(:first-child) {
-      display: none;
+    .navigation_elements {
+      column-gap: 20px;
     }
   }
 }
 
-@media screen and (max-width: 877px) {
+@media screen and (max-width: 1031px) {
   .header_container {
     padding: 25px 25px 20px 25px;
   }
 }
 
-@media screen and (max-width: 828px) {
+@media screen and (max-width: 1001px) {
   .header_container {
+    flex-wrap: wrap;
     height: 100%;
     row-gap: 20px;
 
-    & :nth-child(3) {
+    .navigation_elements {
       order: 3;
-      margin-left: auto;
-      margin-right: auto;
+      width: 100%;
+
+      & :first-child {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_container {
+
+    .burger_menu {
+      display: block;
+    }
+
+    .navigation_elements {
+      & :first-child {
+        display: flex;
+        justify-content: center;
+      }
+
+      & :nth-child(2), & :last-child {
+        display: none;
+      }
+    }
+
+    h1 {
+      text-align: center;
     }
   }
 }
@@ -69,21 +98,15 @@
   }
 }
 
-@media screen and (max-width: 496px) {
-  .header_container {
-    .burger_menu {
-      display: block;
-    }
-
-    h1 {
-      text-align: center;
-    }
-  }
-}
-
 @media screen and (max-width: 425px) {
   .header_container .user_icon {
     width: 35px;
     height: 35px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .header_container {
+    padding: 12px 12px 10px 12px;
   }
 }

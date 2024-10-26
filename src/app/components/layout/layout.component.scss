@@ -2,18 +2,16 @@
   display: flex;
   width: 100%;
   gap: 0;
-  height: 100vh;
+
+  &-dashboard {
+    min-height: 100vh;
+  }
+
+  &-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
-.content_container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-
-@media screen and (max-width: 496px) {
-  //.header_container {
-  //  position: relative;
-  //}
-}
 

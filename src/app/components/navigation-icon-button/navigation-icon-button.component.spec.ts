@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderIconButtonComponent } from './header-icon-button.component';
+import { NavigationIconButtonComponent } from './navigation-icon-button.component';
 
 describe('HeaderIconButtonComponent', () => {
-  let component: HeaderIconButtonComponent;
-  let fixture: ComponentFixture<HeaderIconButtonComponent>;
+  let component: NavigationIconButtonComponent;
+  let fixture: ComponentFixture<NavigationIconButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderIconButtonComponent]
+      imports: [NavigationIconButtonComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HeaderIconButtonComponent);
+    fixture = TestBed.createComponent(NavigationIconButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

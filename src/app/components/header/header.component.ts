@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SearchComponent} from '../search/search.component';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {HeaderIconButtonComponent} from '../header-icon-button/header-icon-button.component';
+import {NavigationIconButtonComponent} from '../navigation-icon-button/navigation-icon-button.component';
 import {ProfilePictureComponent} from '../profile-picture/profile-picture.component';
 import {User} from '../../interfaces/user';
 import {UserService} from '../../services/user.service';
@@ -12,7 +12,7 @@ import {NgClass} from '@angular/common';
   selector: 'app-header',
   standalone: true,
   imports: [
-    SearchComponent, HeaderIconButtonComponent, ProfilePictureComponent, NgClass
+    SearchComponent, NavigationIconButtonComponent, ProfilePictureComponent, NgClass
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

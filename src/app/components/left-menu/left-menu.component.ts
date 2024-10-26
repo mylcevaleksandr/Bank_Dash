@@ -5,15 +5,19 @@ import {MenuItem} from '../../interfaces/menu-item';
 import {NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs';
 import {DashboardService} from '../../services/dashboard.service';
+import {NavigationIconButtonComponent} from "../navigation-icon-button/navigation-icon-button.component";
+import {SearchComponent} from "../search/search.component";
 
 @Component({
   selector: 'app-left-menu',
   standalone: true,
-  imports: [
-    NgForOf,
-    MenuItemComponent,
-    NgClass
-  ],
+    imports: [
+        NgForOf,
+        MenuItemComponent,
+        NgClass,
+        NavigationIconButtonComponent,
+        SearchComponent
+    ],
   templateUrl: './left-menu.component.html',
   styleUrl: './left-menu.component.scss'
 })

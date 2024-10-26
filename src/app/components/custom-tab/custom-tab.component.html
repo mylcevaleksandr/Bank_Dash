@@ -1,20 +1,16 @@
 <app-workspace>
   <div class="tabs">
-    <button class="button__wrapper" routerLink="profile" routerLinkActive="active-tab">
+    <button class="tabs_tab" routerLink="profile" routerLinkActive="tab_active">
       Edit Profile
-      <span class="active__button"></span></button>
-    <button class="button__wrapper" routerLink="preferences"
-            routerLinkActive="active-tab">Preferences
-      <span class="active__button"></span>
+      <span class="tab_active-span"></span></button>
+    <button class="tabs_tab" routerLink="preferences"
+            routerLinkActive="tab_active">Preferences
+      <span class="tab_active-span"></span>
     </button>
-
-    <button class="button__wrapper" routerLink="security" routerLinkActive="active-tab">
+    <button class="tabs_tab" routerLink="security" routerLinkActive="tab_active">
       Security
-      <span class="active__button"></span>
+      <span class="tab_active-span"></span>
     </button>
   </div>
-
-  <div class="tab-content">
     <router-outlet/>
-  </div>
 </app-workspace>
