@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Test_Four": {
+    "Bank_Dash": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test-four",
+            "outputPath": "dist/bank-dash",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Test_Four:build:production"
+              "buildTarget": "Bank_Dash:build:production"
             },
             "development": {
-              "buildTarget": "Test_Four:build:development"
+              "buildTarget": "Bank_Dash:build:development"
             }
           },
           "defaultConfiguration": "development"
